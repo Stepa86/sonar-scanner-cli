@@ -1,4 +1,4 @@
-FROM adoptopenjdk:16-hotspot
+FROM azul/zulu-openjdk:17
 
 LABEL maintainers = "strizhhh@mail.ru, nixel2007@gmail.com"
 
@@ -17,7 +17,7 @@ RUN apt-get update \
         /var/cache/debconf
 
 ENV TZ=Europe/Moscow \
-    SONAR_SCANNER_VERSION="4.6.2.2472" \
+    SONAR_SCANNER_VERSION="7.0.2.4839" \
     SONAR_SCANNER_HOME=/usr/lib/sonar-scanner
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 
